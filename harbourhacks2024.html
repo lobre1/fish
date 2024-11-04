@@ -1,0 +1,384 @@
+<!doctype html>
+<html>
+	<head>
+		<title>fish</title>
+
+		<meta 
+			charset="UTF-8">
+		<meta 
+			name="gyat" 
+			content="YourName">
+		<meta 
+			name="description" 
+			content="fish story">
+		
+				
+		<style>
+
+			#oceanBackground {
+				position: absolute;
+				width:    100%;
+				height:   100%;
+				left:  	  0px;	
+			}
+
+			.fish { 
+				position: absolute;
+				height:   20px;
+				width:    60px;
+			 }
+			
+			.trash {
+				position: absolute;
+				height:   20px;
+				width:    60px;
+			}			
+
+			.bycatch { 
+				position: absolute;
+				height:   30px;
+				width:    70px;
+			 }
+
+			 .heading { 
+				position: 		absolute;
+				font-family: 	Georgia, serif;
+				font-weight: 	bold;
+				font-style: 	italic;
+				color:			#000000;
+				background-color: #2BA5D9;
+				border:         2px solid #1B18DB;
+			  }
+
+			  #fishIdNum {
+			  	top: 		100px;
+			  }
+			
+			  #trashIdNum {
+			  	top: 	150px;
+			  }
+
+
+			  .button {
+				font-family: 	Georgia, serif;
+				font-weight: 	bold;
+				font-style: 	italic;
+				color:			#000000;
+				background-color: #2BA5D9;
+				border:         2px solid #1B18DB;
+				top:            500px;
+
+			  }
+
+			  #textOutputBox {
+			  	font-family: 	Georgia, serif;
+				font-weight: 	bold;
+				font-style: 	italic;
+				color:			#000000;
+				background-color: #2BA5D9;
+				border:         2px solid #1B18DB;
+				top:            500px;
+				height:         100px;
+
+			  }
+
+
+ 			
+ 			body{
+			 	background: url('https://www.shutterstock.com/image-photo/sunlight-shining-the-surface-under-600nw-2327309483.jpg') no-repeat center center fixed;
+			 	background-size: cover;
+			 }
+					
+
+		</style>
+	</head>
+
+	<body>
+		
+	<!-- background -->	
+		<!--<img 
+			id="oceanBackground"
+			src="https://www.shutterstock.com/image-photo/sunlight-shining-the-surface-under-600nw-2327309483.jpg">-->
+
+	<!-- fish -->	
+		<h2 class="heading" >Welcome to the fishing simulator! During this season, you can fish for Smallmouth Bass, Atlantic Salmon and Rainbow Trout. Make sure not to catch any squid or lobster, and pick up as much trash as you can!</h2>
+		<h2 class="heading" id="fishIdNum">Fish Caught: 0/10</h2>
+		<h2 class="heading" id="trashIdNum">Trash Collected: 0</h2>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+		<button class="button" id="overfishingStats">Overfishing in NS</button>
+		<button class="button" id="trashStats">Trash in our Ocean</button>
+		<button class="button" id="bycatchStats">The impact of Bycatching</button>
+
+		<div id="textOutputBox"></div>
+
+
+		<img 
+			class="fish"		
+			id="smallBass"			
+			src="https://wiki.fishingplanet.com/images/a/a5/Smallmouth_Bass.png">
+
+		<img 
+			class="fish"		
+			id="rainbowTrout"			
+			src="https://wiki.fishingplanet.com/images/1/14/Rainbow_Trout.png">
+		
+		<img 
+			class="fish"		
+			id="atlanticSalmon"			
+			src="https://wiki.fishingplanet.com/images/c/c7/Atlantic_Salmon.png">
+
+
+	<!-- trash -->
+
+		<img 
+			class="trash"		
+			id="cigButt"			
+			src="https://png.pngtree.com/png-clipart/20231022/original/pngtree-cigarette-butt-butt-picture-image_13192314.png">
+		
+		<img 
+			class="trash"		
+			id="plasticBag"			
+			src="https://pngimg.com/d/plastic_bag_PNG44.png">
+
+		<img 
+			class="trash"
+			id="oilDrum"
+			src="file:///C:/Users/krisc/Downloads/oil%20drum.png">
+
+		<img 
+			class="trash"
+			id="waterBottle"
+			src="file:///C:/Users/krisc/Downloads/bottle.png">
+
+	<!-- bycatch fish -->	
+
+		<img 
+			class="bycatch"		
+			id="shark"			
+			src="https://wiki.fishingplanet.com/images/9/90/Bull_Shark.png">
+
+		<img 
+			class="bycatch"		
+			id="squid"			
+			src="https://wiki.fishingplanet.com/images/b/b8/Bigfin_Reef_Squid.png">
+
+		<img 
+			class="bycatch"		
+			id="lobster"			
+			src="https://wiki.fishingplanet.com/images/f/fd/Japanese_Spiny_Lobster.png">		
+
+
+		
+		<script>
+			var fishNum=0;
+			var trashNum=0;
+			var score=0;
+			alert("Start?");
+			/* 
+------------STYLE GUIDE FOR LONG LINES: DO NOT PASS COLUMN 95 -------------------------------|
+			*/
+			//set onclick functions for fish, set alert for something????
+			
+		//fish onclick variables 	
+			var clickTrout =function(){ 
+				console.log('trout');
+				document.querySelector('#rainbowTrout').style.visibility = "hidden";			}
+
+			var clickBass =function(){ 
+				console.log('bass');
+				document.querySelector('#smallBass').style.visibility = "hidden";
+			}
+
+			var clickSalmon =function(){ 
+				console.log('salmon');
+				document.querySelector('#atlanticSalmon').style.visibility = "hidden";
+			}
+
+//alerts for bycatch fish **
+
+			var bycatchFishClick =function() {
+				console.log('bycatchFishClick');
+				alert("This is a fish you are NOT allowed to catch, release him back!!");	
+			}
+
+//trash functions - count up how much trash is cleaned up, you want to clean up trash!! :3
+
+			var clickTrash =function() {
+				console.log('trash');
+				document.querySelector('#cigButt').style.visibility = "hidden";
+			}
+			
+			var clickTrash =function() {
+				console.log('trash');
+				document.querySelector('#oilDrum').style.visibility = "hidden";
+			}
+			
+			var clickTrash =function() {
+				console.log('trash');
+				document.querySelector('#plasticBag').style.visibility = "hidden";
+			}
+			
+			var clickTrash =function() {
+				console.log('trash');
+				document.querySelector('#waterBottle').style.visibility = "hidden";
+			}
+
+
+		//output fish functions 
+			document.querySelector( "#rainbowTrout" ).onmouseover = clickTrout; 
+			document.querySelector( "#smallBass" ).onmouseover = clickTrout; 		
+			document.querySelector( "#atlanticSalmon" ).onmouseover = clickTrout; 
+
+		//alerts for bycatch fish functions 
+			document.querySelector( "#squid" ).onmouseover = bycatchFishClick; 
+			document.querySelector( "#shark" ).onmouseover = bycatchFishClick; 
+			document.querySelector( "#lobster" ).onmouseover = bycatchFishClick; 
+
+		//trasg outout functions
+			document.querySelector( "#cigButt" ).onmouseover = clickTrash; 
+			document.querySelector( "#oilDrum" ).onmouseover = clickTrash; 
+			document.querySelector( "#plasticBag" ).onmouseover = clickTrash; 
+			document.querySelector( "#waterBottle" ).onmouseover = clickTrash; 
+
+
+			//trashSpawn
+    		var trashEnt=["file:///C:/Users/krisc/Downloads/bottle.png","file:///C:/Users/krisc/Downloads/oil%20drum.png","https://pngimg.com/d/plastic_bag_PNG44.png", "https://png.pngtree.com/png-clipart/20231022/original/pngtree-cigarette-butt-butt-picture-image_13192314.png"];
+    		for (var j = 0; j < 25; j++) {
+    				var img2=document.createElement("img");
+    				img2.className="trash"	
+    				if (i%2===0) {
+						img2.id='waterBottle';
+						img2.src=trashEnt[0];
+					
+					}
+					if (i%3===0) {
+						img2.id='oilDrum';
+						img2.src=trashEnt[1];
+					}
+					if(i%5===0){
+						img2.id='plasticBag';
+						img2.src=trashEnt[2];
+					}
+					else{
+						img2.id='cigButt';
+						img2.src=trashEnt[3];
+					}
+    				let h=Math.floor(Math.random()*document.documentElement.clientHeight)-30;
+					let a=Math.floor(Math.random()*document.documentElement.clientWidth)-30;
+      				img2.style.left=`${a}px`;
+      				img2.style.top=`${h}px`;
+      				img2.style.visibility="visible";
+    				document.body.prepend(img2);
+    			}
+			//fish spawn
+			var fishEnt=["https://wiki.fishingplanet.com/images/a/a5/Smallmouth_Bass.png","https://wiki.fishingplanet.com/images/1/14/Rainbow_Trout.png", "https://wiki.fishingplanet.com/images/c/c7/Atlantic_Salmon.png"];
+			for (var i = 0; i <18; i++) {
+				var img = document.createElement("img");
+				img.className='fish';
+				if (i%2===0) {
+					img.id='smallBass';
+					img.src=fishEnt[0];
+					
+				}
+				if (i%3===0) {
+					img.id='rainbowTrout';
+					img.src=fishEnt[1];
+				}else{
+					img.id='atlanticSalmon';
+					img.src=fishEnt[2];
+				}
+				//img.class='fish';
+				//img.style.position = "absolute";
+				let h=Math.floor(Math.random()*document.documentElement.clientHeight)-30;
+				let a=Math.floor(Math.random()*document.documentElement.clientWidth)-30;
+      			img.style.left=`${a}px`;
+      			img.style.top=`${h}px`;
+      			img.style.visibility="visible";
+      			document.body.prepend(img);
+			}
+			//Bycatch fish
+			var byfishEnt=["https://wiki.fishingplanet.com/images/9/90/Bull_Shark.png", "https://wiki.fishingplanet.com/images/b/b8/Bigfin_Reef_Squid.png", "https://wiki.fishingplanet.com/images/f/fd/Japanese_Spiny_Lobster.png"];
+			for (var i = 0; i <18; i++) {
+				var img3 = document.createElement("img");
+				img3.className='bycatch';
+				if (i%2===0) {
+					img3.id='shark';
+					img3.src=byfishEnt[0];
+					
+				}
+				if (i%3===0) {
+					img3.id='squid';
+					img3.src=byfishEnt[1];
+				}else{
+					img3.id='lobster';
+					img3.src=byfishEnt[2];
+				}
+				//img.class='fish';
+				//img.style.position = "absolute";
+				let h=Math.floor(Math.random()*document.documentElement.clientHeight)-30;
+				let a=Math.floor(Math.random()*document.documentElement.clientWidth)-30;
+      			img3.style.left=`${a}px`;
+      			img3.style.top=`${h}px`;
+      			img3.style.visibility="visible";
+      			document.body.prepend(img3);
+			}
+			document.querySelectorAll(".fish").forEach(function(fish) {
+				fish.onmouseover = function() {
+        			this.style.visibility = "hidden"; 
+        			fishNum++;
+        			document.getElementById('fishIdNum').innerHTML = 'Fish Caught:' + `${fishNum}` + "/10";
+        			console.log('fishnum');
+        			score+=100;
+        			if(fishNum>=10){
+						alert("You have reached the maximum number of fish you can catch this season. No overfishing! \nScore:"+score);
+						location.reload();
+					}
+   				 };
+			});
+			document.querySelectorAll(".trash").forEach(function(trash) {
+				trash.onmouseover = function() {
+        			this.style.visibility = "hidden"; 
+        			trashNum++;
+        			document.getElementById('trashIdNum').innerHTML = 'Trash Collected:' + `${trashNum}`;
+        			console.log('trashnum');
+        			score+=1000;
+        			
+   				 };
+			});
+			document.querySelectorAll(".bycatch").forEach(function(bycatch) {
+				bycatch.onmouseover = function() {
+        			this.style.visibility = "hidden"; 
+        			console.log('bycatchFishClick');
+					alert("GAME OVER!!! \nThis is a fish you are NOT allowed to catch, release him back!!");
+					location.reload();
+   				 };
+			});
+
+
+			var overfishingStatsButton =function(){ 
+				console.log('overfishing stats')
+				document.querySelector("#textOutputBox").innerHTML = "Overfishing is a real problem. It threatens environments and marine life."; 
+			}
+
+			var bycatchFishButton =function(){ 
+				console.log('bycatchFishClick stats')
+				document.querySelector("#textOutputBox").innerHTML = "Bycatch is when you catch fish you aren't supposed to!!! This hurts the environment."; 
+			}
+			
+			var trashButton =function(){ 
+				console.log('trash stats')
+				document.querySelector("#textOutputBox").innerHTML = "Don't throw your trash in the ocean! Cigarette butts account for 40% of trash pulled from the ocean :("; 
+			}
+	
+		document.getElementById("overfishingStats").onclick = overfishingStatsButton;
+		document.getElementById("trashStats").onclick = trashButton;
+		document.getElementById("bycatchStats").onclick = bycatchFishButton;
+
+
+
+		</script>
+		<div class="bg" />
+	</body>
+</html>
