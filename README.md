@@ -1,3 +1,3 @@
 # fish
-Written with @stone-soap for a hackathon:3 \
+Written with @kris!! for a hackathon:3 \
 1st place 🥇🥇
